@@ -1,0 +1,131 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+     <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>Sabio-Web-E43F2A1C-FED9-410C-B432-08341FD13E2B</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <NodeRoot>node-api\</NodeRoot>
+    <Authors>Gregorio Rojas</Authors>
+    <Company>Sabio Enterprises</Company>
+    <Product>Sabio Api Application</Product>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**;$(NodeRoot)node_modules\**</DefaultItemExcludes>
+    <AssemblyName>Sabio.Web.Api</AssemblyName>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+  </PropertyGroup>
+  <PropertyGroup>
+     <TargetFramework>net6.0</TargetFramework>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ValuesController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="logs\**" />
+    <Content Remove="$(SpaRoot)**" />
+    <Content Remove="$(NodeRoot)**" />
+    <Content Remove="logs\**" />
+    <EmbeddedResource Remove="logs\**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Remove="$(NodeRoot)**" />
+    <None Remove="logs\**" />
+
+    <!--<Content  Remove="ClientApp\**" CopyToPublishDirectory="PreserveNewest" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="debug.log" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt-Core" Version="2.0.0" />
+
+
+    <PackageReference Include="Microsoft.AspNet.SignalR" Version="2.4.2" />
+
+
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+
+
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+
+
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
+
+
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.21" />
+
+
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="6.0.0" />
+
+
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
+
+
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+
+
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+
+
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+
+
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.0" />
+
+
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+
+    <PackageReference Include="Sendgrid" Version="9.25.1" />
+
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sabio.Data\Sabio.Data.csproj" />
+    <ProjectReference Include="..\Sabio.Models\Sabio.Models.csproj" />
+    <ProjectReference Include="..\Sabio.Services\Sabio.Services.csproj" />
+    <ProjectReference Include="..\Sabio.Web.Core\Sabio.Web.Core.csproj" />
+    <ProjectReference Include="..\Sabio.Web.Models\Sabio.Web.Models.csproj" />
+  </ItemGroup>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)build\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+
+    <ItemGroup>
+      <DistFiles Include="$(NodeRoot)\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+
+
+
+
+</Project>

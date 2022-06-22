@@ -1,0 +1,11 @@
+{
+  "UserDBSettings": {
+    "DatabaseName": "T01_DotNet_UnitTest_Key",
+    "UserName": "T01_DotNet_UnitTest_Key_User",
+    "Password": "T01_DotNet_UnitTest_Key_User838CDC68"
+
+  },
+  "ServerSettings": {
+    "Server": "104.42.194.102"
+  }
+}

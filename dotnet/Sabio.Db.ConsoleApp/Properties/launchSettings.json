@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Sabio.Db.ConsoleApp": {
+      "commandName": "Project"
+    },
+    "Test Connection": {
+      "commandName": "Project"
+    }
+  }
+}

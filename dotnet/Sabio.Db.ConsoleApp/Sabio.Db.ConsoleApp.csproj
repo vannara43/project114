@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Sabio.Data\Sabio.Data.csproj" />
+		<ProjectReference Include="..\Sabio.Models\Sabio.Models.csproj" />
+		<ProjectReference Include="..\Sabio.Services\Sabio.Services.csproj" />
+	</ItemGroup>
+
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="xcopy &quot;$(SolutionDir)\Sabio.Db.ConsoleApp\lib\**&quot; &quot;$(OutDir)&quot; /i /d /y" />
+	</Target>
+
+</Project>
