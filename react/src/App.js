@@ -9,6 +9,7 @@ function App() {
       <p>Added by Vann T</p>
       <p>Added by jared</p>
       <p>Added by Vann again</p>
+      <p>Added by jared after pull</p>
     </React.Fragment>
   );
 }
