@@ -7,7 +7,8 @@ function App() {
       <h1>Default Page</h1>
       <p>This is a paragrapg</p>
       <p>Added by Vann T</p>
-      <p>added by jared</p>
+      <p>Added by jared</p>
+      <p>Added by Vann again</p>
     </React.Fragment>
   );
 }
