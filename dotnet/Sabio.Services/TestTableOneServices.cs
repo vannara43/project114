@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Sabio.Services
 {
-    public class TestTableOneServices
+    public class TestTableOneServices : ITestTableOneServices
     {
         IDataProvider _data = null;
 
@@ -19,12 +19,11 @@ namespace Sabio.Services
             _data = data;
         }
 
-        public int Add(TestTableOneAddRequest model )
+        public int Add(TestTableOneAddRequest model)
         {
             int id = 0;
             string procName = "[dbo].[TestTableOne_Insert]";
-            _data.ExecuteNonQuery(procName,
-                inputParamMapper: delegate (SqlParameterCollection col)
+            _data.ExecuteNonQuery(procName, inputParamMapper: delegate (SqlParameterCollection col)
                 {
                     testTableParams(model, col);
 

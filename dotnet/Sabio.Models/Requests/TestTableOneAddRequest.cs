@@ -8,7 +8,6 @@ namespace Sabio.Models.Requests
 {
     public class TestTableOneAddRequest
     {
-      
         public string Name { get; set; }
         public string SKU { get; set; }
         public int Price { get; set; }

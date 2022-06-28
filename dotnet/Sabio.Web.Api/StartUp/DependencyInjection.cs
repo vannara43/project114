@@ -46,6 +46,7 @@ namespace Sabio.Web.StartUp
             // Do NOT REMOVE this line below.
             // Edits to the IUserService are OK 
             services.AddSingleton<IUserService, UserService>();
+            services.AddSingleton<ITestTableOneServices, TestTableOneServices>();
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
