@@ -33,8 +33,9 @@ namespace Sabio.Web.Api.Controllers
 
             try
             {
-                _service.Add(model);
-                return StatusCode(code, new SuccessResponse());
+                int id = _service.Add(model);
+                ItemResponse<int> response = new ItemResponse<int>() { Item = id };
+                result = Created201(response);
             }
             catch (Exception ex)
             {
