@@ -17,6 +17,7 @@ namespace Sabio.Web.Api.Controllers
     {
         private ITestTableOneServices _service = null;
         private IAuthenticationService<int> _authService = null;
+
         public TestTableOneAPIController(ITestTableOneServices service
             , ILogger<TestTableOneAPIController> logger
             , IAuthenticationService<int> authService) : base(logger)
@@ -32,9 +33,8 @@ namespace Sabio.Web.Api.Controllers
 
             try
             {
-                int id = _service.Add(model);
-                ItemResponse<int> response = new ItemResponse<int>() { Item = id };
-                result = Created201(response);
+                _service.Add(model);
+                return StatusCode(code, new SuccessResponse());
             }
             catch (Exception ex)
             {
@@ -44,5 +44,7 @@ namespace Sabio.Web.Api.Controllers
             }
             return result;
         }
+      
+        }
     }
-}
+
