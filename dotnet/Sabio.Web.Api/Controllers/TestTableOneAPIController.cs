@@ -33,13 +33,8 @@ namespace Sabio.Web.Api.Controllers
 
             try
             {
-                int userId = _authService.GetCurrentUserId();
-
-                int id = _service.Add(model);
-
-                ItemResponse<int> response = new ItemResponse<int>() { Item = id };
-
-                result = Created201(response);
+                _service.Add(model);
+                return StatusCode(code, new SuccessResponse());
             }
             catch (Exception ex)
             {
