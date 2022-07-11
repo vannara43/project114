@@ -26,23 +26,23 @@ namespace Sabio.Web.Api.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult<SuccessResponse> Create(TestTableOneAddRequest model)
+        public ActionResult<ItemResponse<int>> Create(TestTableOneAddRequest model)
         {
-            IUserAuthData user = _authService.GetCurrentUser();
-            int code = 200;
-            BaseResponse response = null;
+            ObjectResult result = null;
+
             try
             {
-                _service.Add(model);
-                return StatusCode(code, new SuccessResponse());
+                int id = _service.Add(model);
+                ItemResponse<int> response = new ItemResponse<int>() { Item = id };
+                result = Created201(response);
             }
             catch (Exception ex)
             {
-                base.Logger.LogError(ex.ToString());
-                code = 500;
-                response = new ErrorResponse(ex.Message);
+                Logger.LogError(ex.ToString());
+                ErrorResponse response = new ErrorResponse(ex.Message);
+                result = StatusCode(500, response);
             }
-            return StatusCode(code, response);
+            return result;
         }
     }
 }
