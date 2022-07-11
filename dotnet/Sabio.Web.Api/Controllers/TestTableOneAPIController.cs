@@ -17,6 +17,7 @@ namespace Sabio.Web.Api.Controllers
     {
         private ITestTableOneServices _service = null;
         private IAuthenticationService<int> _authService = null;
+
         public TestTableOneAPIController(ITestTableOneServices service
             , ILogger<TestTableOneAPIController> logger
             , IAuthenticationService<int> authService) : base(logger)
@@ -26,23 +27,29 @@ namespace Sabio.Web.Api.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult<SuccessResponse> Create(TestTableOneAddRequest model)
+        public ActionResult<ItemResponse<int>> Create(TestTableOneAddRequest model)
         {
-            IUserAuthData user = _authService.GetCurrentUser();
-            int code = 200;
-            BaseResponse response = null;
+            ObjectResult result = null;
+
             try
             {
-                _service.Add(model);
-                return StatusCode(code, new SuccessResponse());
+                int userId = _authService.GetCurrentUserId();
+
+                int id = _service.Add(model);
+
+                ItemResponse<int> response = new ItemResponse<int>() { Item = id };
+
+                result = Created201(response);
             }
             catch (Exception ex)
             {
-                base.Logger.LogError(ex.ToString());
-                code = 500;
-                response = new ErrorResponse(ex.Message);
+                Logger.LogError(ex.ToString());
+                ErrorResponse response = new ErrorResponse(ex.Message);
+                result = StatusCode(500, response);
             }
-            return StatusCode(code, response);
+            return result;
+        }
+      
         }
     }
-}
+

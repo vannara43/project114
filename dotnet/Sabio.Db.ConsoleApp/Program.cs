@@ -10,7 +10,7 @@ namespace Sabio.Db.ConsoleApp
             //Here are two example connection strings. Please check with the wiki and video courses to help you pick an option
 
             //string connString = @"Data Source=ServerName_Or_IpAddress;Initial Catalog=DB_Name;User ID=SabioUser;Password=Sabiopass1!";
-            string connString = @"Server=tcp:project114.database.windows.net,1433;Initial Catalog=project114;Persist Security Info=False;User ID=admin_user;Password=Microsoft43!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connString = @"Server=tcp:project114.database.windows.net,1433;Initial Catalog=project114;User ID=admin_user;Password=Microsoft43!;TrustServerCertificate=True;Connection Timeout=30;";
 
             TestConnection(connString);
 
