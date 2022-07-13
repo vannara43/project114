@@ -5,5 +5,6 @@ namespace Sabio.Services
     public interface ITestTableOneServices
     {
         int Add(TestTableOneAddRequest model);
+        void Update(TestTableOneUpdateRequest model);
     }
 }

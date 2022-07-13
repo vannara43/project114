@@ -42,6 +42,19 @@ namespace Sabio.Services
             return id;
         }
 
+        public void Update(TestTableOneUpdateRequest model)
+        {
+            string procName = "[dbo].[TestTableOne_Update]";
+            _data.ExecuteNonQuery(procName,
+                inputParamMapper: delegate (SqlParameterCollection col)
+                {
+                    col.AddWithValue("@Id", model.Id);
+                    testTableParams(model, col);
+
+
+                }, returnParameters: null);
+        }
+
         private static void testTableParams(TestTableOneAddRequest model, SqlParameterCollection col)
         {
             col.AddWithValue("@Name", model.Name);

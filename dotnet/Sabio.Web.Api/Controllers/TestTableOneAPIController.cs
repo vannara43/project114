@@ -45,7 +45,28 @@ namespace Sabio.Web.Api.Controllers
             }
             return result;
         }
-      
+        
+        [HttpPut("{id:int}")]
+        [AllowAnonymous]
+        public ActionResult Update(TestTableOneUpdateRequest model)
+        {
+            
+            BaseResponse response = null;
+            int code = 200;
+            try
+            {
+                _service.Update(model);
+                response = new SuccessResponse();
+            }
+            catch (Exception ex)
+            {
+                response = new ErrorResponse(ex.Message);
+                code = 500;
+            }
+            return StatusCode(code, response); ;
+
         }
+
     }
+}
 
