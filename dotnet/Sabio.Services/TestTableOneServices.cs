@@ -1,4 +1,7 @@
-﻿using Sabio.Data.Providers;
+﻿using Sabio.Data;
+using Sabio.Data.Providers;
+using Sabio.Models;
+using Sabio.Models.Domain;
 using Sabio.Models.Requests;
 using System;
 using System.Collections.Generic;
@@ -40,6 +43,58 @@ namespace Sabio.Services
                     int.TryParse(oId.ToString(), out id);
                 });
             return id;
+        }
+
+        public Paged<TestTableOne> GetAll(int pageIndex, int pageSize)
+        {
+            Paged<TestTableOne> pagedList = null;
+            List<TestTableOne> list = null;
+            int totalCount = 0;
+
+            string procName = "[dbo].[TestTableOne_GetAll]";
+
+            _data.ExecuteCmd(procName, (param) =>
+            {
+                param.AddWithValue("@pageIndex", pageIndex);
+                param.AddWithValue("@pageSize", pageSize);
+            },
+            (reader, recordSetIndex) =>
+            {
+                int startingIndex = 0;
+                TestTableOne testTableOne = MapTestTableOne(reader, ref startingIndex);
+
+                if (totalCount == 0)
+                {
+                    totalCount = reader.GetSafeInt32(startingIndex);
+                }
+
+                if (list == null)
+                {
+                    list = new List<TestTableOne>();
+                }
+                list.Add(testTableOne);
+            }
+            );
+            if (list != null)
+            {
+                pagedList = new Paged<TestTableOne>(list, pageIndex, pageSize, totalCount);
+            }
+            return pagedList;
+
+        }
+
+        private TestTableOne MapTestTableOne(IDataReader reader, ref int startingIndex)
+        {
+            TestTableOne testTableOne = new TestTableOne();
+
+            testTableOne.Id = reader.GetSafeInt32(startingIndex++);
+            testTableOne.Name = reader.GetSafeString(startingIndex++);
+            testTableOne.SKU = reader.GetSafeString(startingIndex++);
+            testTableOne.Price = reader.GetSafeInt32(startingIndex++);
+            testTableOne.Description = reader.GetSafeString(startingIndex++);
+            testTableOne.ImgUrl = reader.GetSafeString(startingIndex++);
+
+            return testTableOne;
         }
 
         private static void testTableParams(TestTableOneAddRequest model, SqlParameterCollection col)
