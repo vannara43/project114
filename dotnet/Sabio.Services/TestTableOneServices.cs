@@ -83,6 +83,29 @@ namespace Sabio.Services
 
         }
 
+
+        public void Update(TestTableOneUpdateRequest model)
+        {
+            string procName = "[dbo].[TestTableOne_Update]";
+            _data.ExecuteNonQuery(procName,
+                inputParamMapper: delegate (SqlParameterCollection col)
+                {
+                    col.AddWithValue("@Id", model.Id);
+                    testTableParams(model, col);
+
+
+                }, returnParameters: null);
+        }
+
+        private static void testTableParams(TestTableOneAddRequest model, SqlParameterCollection col)
+        {
+            col.AddWithValue("@Name", model.Name);
+            col.AddWithValue("@SKU", model.SKU);
+            col.AddWithValue("@Price", model.Price);
+            col.AddWithValue("@Description", model.Description);
+            col.AddWithValue("@ImgUrl", model.ImgUrl);
+        }
+
         private TestTableOne MapTestTableOne(IDataReader reader, ref int startingIndex)
         {
             TestTableOne testTableOne = new TestTableOne();
@@ -95,15 +118,6 @@ namespace Sabio.Services
             testTableOne.ImgUrl = reader.GetSafeString(startingIndex++);
 
             return testTableOne;
-        }
-
-        private static void testTableParams(TestTableOneAddRequest model, SqlParameterCollection col)
-        {
-            col.AddWithValue("@Name", model.Name);
-            col.AddWithValue("@SKU", model.SKU);
-            col.AddWithValue("@Price", model.Price);
-            col.AddWithValue("@Description", model.Description);
-            col.AddWithValue("@ImgUrl", model.ImgUrl);
         }
     }
 }
