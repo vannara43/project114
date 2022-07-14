@@ -8,5 +8,6 @@ namespace Sabio.Services
     {
         int Add(TestTableOneAddRequest model);
         Paged<TestTableOne> GetAll(int pageIndex, int pageSize);
+        void Update(TestTableOneUpdateRequest model);
     }
 }
