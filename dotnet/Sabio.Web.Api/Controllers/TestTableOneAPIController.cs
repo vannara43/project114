@@ -77,8 +77,8 @@ namespace Sabio.Web.Api.Controllers
             }
             return StatusCode(code, response);
         }
-        }
-    }
+        
+    
         
         [HttpPut("{id:int}")]
         [AllowAnonymous]
