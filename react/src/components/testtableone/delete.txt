@@ -1,0 +1,1 @@
+delte <i class="fa fa-th-list" aria-hidden="true"></i>
