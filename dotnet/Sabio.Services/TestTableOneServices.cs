@@ -97,6 +97,14 @@ namespace Sabio.Services
                 }, returnParameters: null);
         }
 
+        public void Delete(int id)
+        {
+            string procName = "[dbo].[TestTableOne_Delete]";
+            _data.ExecuteNonQuery(procName, inputParamMapper: delegate (SqlParameterCollection col)
+            {
+                col.AddWithValue("@Id", id);
+            });
+        }
         private static void testTableParams(TestTableOneAddRequest model, SqlParameterCollection col)
         {
             col.AddWithValue("@Name", model.Name);
