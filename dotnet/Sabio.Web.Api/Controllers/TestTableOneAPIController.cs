@@ -101,6 +101,26 @@ namespace Sabio.Web.Api.Controllers
 
         }
 
+        [HttpDelete("{id:int}")]
+        [AllowAnonymous]
+        public ActionResult<SuccessResponse> Delete(int id)
+        {
+            int code = 200;
+            BaseResponse response = null;
+            try
+            {
+                _service.Delete(id);
+                response = new SuccessResponse();
+            }
+            catch(Exception ex)
+            {
+                code =500;
+                response = new ErrorResponse(ex.Message);
+            }
+           
+            return StatusCode(code, response);
+        }
+
     }
 }
 
