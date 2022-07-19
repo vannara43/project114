@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
+import testService from "./components/Service";
 
 function App() {
+  const onGetAllSuccess = (response) => {};
   return (
     <React.Fragment>
       <h1>Default Page</h1>
