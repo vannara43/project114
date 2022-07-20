@@ -8,9 +8,9 @@ namespace Sabio.Services
 {
     public class AddressServices
     {
-        //public int Add(AddressAddRequest model)
-        //{
-        //    return Add(model, null);
-        //}
+        public int Add(AddressAddRequest model)
+        {
+            return Add(model);
+        }
     }
 }
