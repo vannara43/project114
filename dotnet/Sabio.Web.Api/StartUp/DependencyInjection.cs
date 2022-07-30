@@ -45,6 +45,7 @@ namespace Sabio.Web.StartUp
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             // Do NOT REMOVE this line below.
             // Edits to the IUserService are OK 
+            services.AddSingleton<IAddressServices, AddressServices>();
             services.AddSingleton<IUserService, UserService>();
             services.AddSingleton<ITestTableOneServices, TestTableOneServices>();
         }
