@@ -25,7 +25,7 @@ function App() {
   return (
     <React.Fragment>
       <div className="container">
-        <h1>Project 114</h1>
+        <h1>Project E-Com</h1>
         <hr />
         <h3 className="my-3">Meet our developers</h3>
         <div className="row ">
