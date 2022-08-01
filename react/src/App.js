@@ -1,17 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import testService from "./components/services/Service"
 import "./App.css";
-import testService from "./components/Service";
 
 function App() {
-  const onGetAllSuccess = (response) => {};
+
+  const [testTableOne, setTestTableOne] = useState([])
+  const [currentPage] = useState(0);
+  const [pageSize] = useState(5);
+
+
+  const TestTableOneGetAll = () => {
+    testService.getAll(0, 5).then(TestTableOneGetAllSuccess).catch(TestTableOneGetAllError)
+  }
+  const TestTableOneGetAllSuccess = (response) => {
+    console.table(response.pagedItems);
+  }
+
+  const TestTableOneGetAllError = (err) => {
+    console.log(err);
+  }
+  useEffect(() => {
+    TestTableOneGetAll();
+  }, [])
   return (
     <React.Fragment>
-      <h1>Default Page</h1>
-      <p>This is a paragrapg</p>
-      <p>Added by Vann T</p>
-      <p>Added by jared</p>
-      <p>Added by Vann again</p>
-      <p>Added by jared after pull</p>
+      <div className="container">
+        <h1>Project 114</h1>
+        <hr />
+        <h3>Meet our developers</h3>
+        <div className="row ">
+          <div className="col col-2">
+            <img className="rounded-circle" alt="" src="https://media-exp1.licdn.com/dms/image/C5603AQGscng7POt26g/profile-displayphoto-shrink_200_200/0/1648413781916?e=1665014400&v=beta&t=nZPZb-vSH5qJZB16q9ufTSlA9xHLN85_Y_XWn_1EV3o" />
+            <p className="">Jared Williams</p>
+          </div>
+          <div className="col">
+            <img className="rounded-circle" alt="" src="https://media-exp1.licdn.com/dms/image/C5603AQEcL8kmvPemtQ/profile-displayphoto-shrink_200_200/0/1652878926495?e=1665014400&v=beta&t=zqeXGf73gG9nkbe1y8cM26kcV6brfzJ57oHiYjfRjD0" />
+            <p>Vannara Thong</p>
+          </div>
+        </div>
+      </div>
     </React.Fragment>
   );
 }
