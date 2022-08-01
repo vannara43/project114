@@ -48,7 +48,9 @@ const logTestingPlaygroundURL = (element = (0, _helpers.getDocument)().body) => 
     return;
   }
 
-  console.log(`Open this URL in your browser\n\n${getPlaygroundUrl(element.innerHTML)}`);
+  const playgroundUrl = getPlaygroundUrl(element.innerHTML);
+  console.log(`Open this URL in your browser\n\n${playgroundUrl}`);
+  return playgroundUrl;
 };
 
 const initialValue = {
