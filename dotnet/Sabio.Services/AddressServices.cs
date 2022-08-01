@@ -102,9 +102,13 @@ namespace Sabio.Services
                 }, returnParameters: null);
         }
 
-        public void Delete()
+        public void Delete(int id)
         {
-
+            string procName = "[dbo].[address_delete]";
+            _data.ExecuteNonQuery(procName, inputParamMapper: delegate (SqlParameterCollection col)
+            {
+                col.AddWithValue("@Id", id);
+            });
         }
         private static Address MapAddress(IDataReader reader, ref int startingIndex)
         {

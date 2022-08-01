@@ -57,19 +57,19 @@ namespace Sabio.Web.Api.Controllers
             try
             {
                 Paged<Address> paged = _service.GetAll(pageIndex, pageSize);
-                if (paged ==null)
+                if (paged == null)
                 {
                     code = 404;
                     response = new ErrorResponse("Records Not Found");
                 }
                 else
                 {
-                    ItemResponse<Paged<Address>> itemResponse = new ItemResponse<Paged<Address>>(); 
+                    ItemResponse<Paged<Address>> itemResponse = new ItemResponse<Paged<Address>>();
                     itemResponse.Item = paged;
                     response = new ItemResponse<Paged<Address>> { Item = paged };
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 code = 500;
                 response = new ErrorResponse(ex.Message);
@@ -93,9 +93,28 @@ namespace Sabio.Web.Api.Controllers
             catch (Exception ex)
             {
                 code = 500;
-                response= new ErrorResponse(ex.Message);
+                response = new ErrorResponse(ex.Message);
             }
             return StatusCode(code, response);
+        }
+
+        [HttpDelete("{id:int}")]
+        [AllowAnonymous]
+        public ActionResult<SuccessResponse> Delete(int id)
+        {
+            int code = 200;
+            BaseResponse response = null;
+            try
+            {
+                _service.Delete(id);
+                response = new SuccessResponse();
+            }
+            catch(Exception ex)
+            {
+                code = 500;
+                response= new ErrorResponse(ex.Message);
+            }
+            return StatusCode(code,response);
         }
     }
 }

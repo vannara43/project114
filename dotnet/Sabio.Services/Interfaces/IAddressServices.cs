@@ -10,5 +10,6 @@ namespace Sabio.Services
         int Add(AddressAddRequest model);
         Paged<Address> GetAll(int pageIndex, int pageSize);
         void Update(AddressUpdateRequest model);
+        void Delete(int id);
     }
 }
