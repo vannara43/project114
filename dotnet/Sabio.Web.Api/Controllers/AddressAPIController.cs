@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Sabio.Models;
 using Sabio.Models.Domain;
+using Sabio.Models.Requests;
 using Sabio.Services;
 using Sabio.Web.Controllers;
 using Sabio.Web.Models.Responses;
@@ -73,6 +74,26 @@ namespace Sabio.Web.Api.Controllers
                 code = 500;
                 response = new ErrorResponse(ex.Message);
                 base.Logger.LogError(ex.ToString());
+            }
+            return StatusCode(code, response);
+        }
+
+        [HttpPut("{id:int}")]
+        [AllowAnonymous]
+        public ActionResult Update(AddressUpdateRequest model)
+        {
+            int code = 200;
+            BaseResponse response = null;
+
+            try
+            {
+                _service.Update(model);
+                response = new SuccessResponse();
+            }
+            catch (Exception ex)
+            {
+                code = 500;
+                response= new ErrorResponse(ex.Message);
             }
             return StatusCode(code, response);
         }

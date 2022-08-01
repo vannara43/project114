@@ -2,6 +2,7 @@
 using Sabio.Data.Providers;
 using Sabio.Models;
 using Sabio.Models.Domain;
+using Sabio.Models.Requests;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -83,6 +84,28 @@ namespace Sabio.Services
             return pagedList;
         }
 
+        public void Update(AddressUpdateRequest model)
+        {
+            string procName = "[dbo].[address_update]";
+            _data.ExecuteNonQuery(procName,
+                inputParamMapper: delegate (SqlParameterCollection col)
+                {
+                    col.AddWithValue("@Id", model.Id);
+                    col.AddWithValue("@FirstName", model.FirstName);
+                    col.AddWithValue("@LastName", model.LastName);
+                    col.AddWithValue("@Street", model.Street);
+                    col.AddWithValue("@Street2", model.Street2);
+                    col.AddWithValue("@City", model.City);
+                    col.AddWithValue("@Country", model.Country);
+                    col.AddWithValue("@Zip", model.Zip);
+                    col.AddWithValue("@UserId", model.UserId);
+                }, returnParameters: null);
+        }
+
+        public void Delete()
+        {
+
+        }
         private static Address MapAddress(IDataReader reader, ref int startingIndex)
         {
             Address address = new Address();

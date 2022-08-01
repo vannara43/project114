@@ -1,6 +1,7 @@
 ﻿
 using Sabio.Models;
 using Sabio.Models.Domain;
+using Sabio.Models.Requests;
 
 namespace Sabio.Services
 {
@@ -8,5 +9,6 @@ namespace Sabio.Services
     {
         int Add(AddressAddRequest model);
         Paged<Address> GetAll(int pageIndex, int pageSize);
+        void Update(AddressUpdateRequest model);
     }
 }
