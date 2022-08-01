@@ -84,12 +84,23 @@ namespace Sabio.Services
 
         public void Update(ApplicationUserUpdateRequest model)
         {
-
+            string procName = "[dbo].[applicationuser_update]";
+            _data.ExecuteNonQuery(procName,
+                inputParamMapper: delegate (SqlParameterCollection col)
+                {
+                    col.AddWithValue("@Id", model.Id);
+                    col.AddWithValue("@FirstName", model.FirstName);
+                    col.AddWithValue("@LastName", model.LastName);
+                }, returnParameters: null);
         }
 
         public void Delete(int id)
         {
-
+            string procName = "[dbo].[applicationuser_delete]";
+            _data.ExecuteNonQuery(procName, inputParamMapper: delegate (SqlParameterCollection col)
+            {
+                col.AddWithValue("@Id", id);
+            });
         }
     }
 }

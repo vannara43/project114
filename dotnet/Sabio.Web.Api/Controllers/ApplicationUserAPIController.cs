@@ -77,14 +77,41 @@ namespace Sabio.Web.Api.Controllers
 
         [HttpPut("{id}")]
         [AllowAnonymous]
-        public void Update(ApplicationUserUpdateRequest model)
+        public ActionResult Update(ApplicationUserUpdateRequest model)
         {
+            int code = 200;
+            BaseResponse response = null;
+
+            try
+            {
+                _service.Update(model);
+                response = new SuccessResponse();
+            }
+            catch(Exception ex)
+            {
+                code = 500;
+                response = new ErrorResponse(ex.Message);
+            }
+            return StatusCode(code, response);
         }
 
         [HttpDelete("{id}")]
         [AllowAnonymous]
-        public void Delete(int id)
+        public ActionResult<SuccessResponse> Delete(int id)
         {
+            int code = 200;
+            BaseResponse response = null;
+            try
+            {
+                _service.Delete(id);
+                response = new SuccessResponse();
+            }
+            catch(Exception ex)
+            {
+                code = 500;
+                response=new ErrorResponse(ex.Message);
+            }
+            return StatusCode(code, response);
         }
     }
 }
