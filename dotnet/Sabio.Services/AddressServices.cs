@@ -1,6 +1,10 @@
-﻿using Sabio.Data.Providers;
+﻿using Sabio.Data;
+using Sabio.Data.Providers;
+using Sabio.Models;
+using Sabio.Models.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -41,6 +45,57 @@ namespace Sabio.Services
                  int.TryParse(oId.ToString(), out id);
              });
             return id;
+        }
+        public Paged<Address> GetAll(int pageIndex, int pageSize)
+        {
+            Paged<Address> pagedList = null;
+            List<Address> list = null;
+            int totalCount = 0;
+
+            string procName = "[dbo].[Address_GetAll]";
+
+            _data.ExecuteCmd(procName, (param) =>
+            {
+                param.AddWithValue("@pageIndex", pageIndex);
+                param.AddWithValue("@pageSize", pageSize);
+            },
+            (reader, recordSetIndex) =>
+            {
+                int startingIndex = 0;
+
+                Address address = MapAddress(reader, ref startingIndex);
+
+                if (totalCount == 0)
+                {
+                    totalCount = reader.GetSafeInt32(startingIndex);
+                }
+
+                if (list == null)
+                {
+                    list = new List<Address>();
+                }
+                list.Add(address);
+            });
+            if(list != null)
+            {
+                pagedList = new Paged<Address>(list, pageIndex, pageSize, totalCount);
+            }
+            return pagedList;
+        }
+
+        private static Address MapAddress(IDataReader reader, ref int startingIndex)
+        {
+            Address address = new Address();
+            address.Id = reader.GetSafeInt32(startingIndex++);
+            address.FirstName = reader.GetSafeString(startingIndex++);
+            address.LastName = reader.GetSafeString(startingIndex++);
+            address.Street = reader.GetSafeString(startingIndex++);
+            address.Street2 = reader.GetSafeString(startingIndex++);
+            address.City = reader.GetSafeString(startingIndex++);
+            address.Country = reader.GetSafeString(startingIndex++);
+            address.Zip = reader.GetSafeInt32(startingIndex++);
+            address.UserId = reader.GetSafeInt32(startingIndex++);
+            return address;
         }
     }
 }
