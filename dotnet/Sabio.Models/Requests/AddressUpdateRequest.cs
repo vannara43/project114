@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sabio.Models.Requests
 {
-    internal class AddressUpdateRequest : AddressAddRequest
+    public class AddressUpdateRequest : AddressAddRequest
     {
         public int Id { get; set; }
     }
