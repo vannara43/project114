@@ -5,8 +5,8 @@ Project-114/Project E-Com, is focuses on e-commerce and artificial intelligence.
 
 Stages: <br/>
 SQL relational database has been established<br/>
-DotNet Middle Tier has been established<br/>
-React has been established.<br/>
+DotNet middle tier has been established<br/>
+React front end has been established.<br/>
 
 Developer Team: <br/>
 Jared Williams and Vannara Thong
