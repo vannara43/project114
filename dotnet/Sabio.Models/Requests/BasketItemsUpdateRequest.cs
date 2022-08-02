@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sabio.Models.Requests
 {
-    public class BasketItemsUpdateRequest
+    public class BasketItemsUpdateRequest: BasketItemsAddRequest
     {
         public int Id { get; set; }
     }
