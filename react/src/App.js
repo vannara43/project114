@@ -27,6 +27,14 @@ function App() {
       <div className="container">
         <h1>Project E-Com</h1>
         <hr />
+        <h3>Tasks</h3>
+        <p>Make A Dashboard<br />
+          Make a register page<br />
+          Make a login<br />
+          Make a user profile<br />
+          Make a product page<br />
+          Make a checkout page<br />
+          Make a shop page</p>
         <h3 className="my-3">Meet our developers</h3>
         <div className="row ">
           <div className="col col-2">
