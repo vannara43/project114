@@ -6,4 +6,6 @@ SQL relational database has been established<br/>
 DotNet Middle Tier has been established<br/>
 React has been created.<br/>
 
+Developer Team: Jared Williams and Vannara Thong
+
 Tech Stack: SQL, .NET C#, Node, JavaScript, React, HTML, CSS, GIT, POSTMAN, Bootstrap, SSMS
