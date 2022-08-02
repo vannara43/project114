@@ -1,11 +1,15 @@
 # Project-114/Project E-Com
 
-About this site: Project-114/Project E-Com, is focuses on e-commerce and artificial intelligence. It is referred to as "One of the world most greatest online retailer that is focused on making customers happy."<br/>
+About this site: <br/>
+Project-114/Project E-Com, is focuses on e-commerce and artificial intelligence. It is referred to as "One of the world most greatest online retailer that is focused on making customers happy."<br/>
 
+Stages: <br/>
 SQL relational database has been established<br/>
 DotNet Middle Tier has been established<br/>
-React has been created.<br/>
+React has been established.<br/>
 
-Developer Team: Jared Williams and Vannara Thong
+Developer Team: <br/>
+Jared Williams and Vannara Thong
 
-Tech Stack: SQL, .NET C#, Node, JavaScript, React, HTML, CSS, GIT, POSTMAN, Bootstrap, SSMS
+Tech Stack: <br/>
+SQL, .NET C#, Node, JavaScript, React, HTML, CSS, GIT, POSTMAN, Bootstrap, SSMS
