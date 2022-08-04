@@ -48,6 +48,7 @@ namespace Sabio.Web.StartUp
             services.AddSingleton<IAddressServices, AddressServices>();
             services.AddSingleton<IApplicationUserServices, ApplicationUserServices>();
             services.AddSingleton<IBasketItemsServices, BasketItemsServices>();
+            services.AddSingleton<IBasketsServices, BasketsServices>();
             services.AddSingleton<IUserService, UserService>();
             services.AddSingleton<ITestTableOneServices, TestTableOneServices>();
         }
