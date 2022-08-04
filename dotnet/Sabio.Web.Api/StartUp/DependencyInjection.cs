@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Sabio.Data;
 using Sabio.Services;
+using Sabio.Services.Interfaces;
 using Sabio.Web.Core.Services;
 using System;
 
@@ -49,6 +50,7 @@ namespace Sabio.Web.StartUp
             services.AddSingleton<IApplicationUserServices, ApplicationUserServices>();
             services.AddSingleton<IBasketItemsServices, BasketItemsServices>();
             services.AddSingleton<IBasketsServices, BasketsServices>();
+            services.AddSingleton<IOrderItemsServices, OrderItemsServices>();
             services.AddSingleton<IUserService, UserService>();
             services.AddSingleton<ITestTableOneServices, TestTableOneServices>();
         }
