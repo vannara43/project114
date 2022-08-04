@@ -67,7 +67,7 @@ namespace Sabio.Services
             {
                 int startingIndex = 0;
 
-                BasketItems address = MapBasketItems(reader, ref startingIndex);
+                BasketItems basketItems = MapBasketItems(reader, ref startingIndex);
 
                 if (totalCount == 0)
                 {
@@ -78,7 +78,7 @@ namespace Sabio.Services
                 {
                     list = new List<BasketItems>();
                 }
-                list.Add(address);
+                list.Add(basketItems);
             });
             if (list != null)
             {
