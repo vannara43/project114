@@ -4,7 +4,7 @@ function dashboard() {
   return (
     <React.Fragment>
     <div className="nav p-3 bg-primary">
-        <h2 className="text-white col-lg-2 text-center">Project 114</h2>
+        <h2 className="text-white col-lg-2 text-center">Project E-Com</h2>
         <button className="mx-1 btn btn-primary">Home</button>
         <button className="mx-1 btn btn-primary">Explore</button>
         <button className="mx-1 btn btn-primary">My Basket</button>
