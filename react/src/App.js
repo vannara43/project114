@@ -49,6 +49,10 @@ function App() {
               <img height="100px" width="100px" className="rounded-circle" alt="" src="https://media-exp1.licdn.com/dms/image/C5603AQEcL8kmvPemtQ/profile-displayphoto-shrink_200_200/0/1652878926495?e=1665014400&v=beta&t=zqeXGf73gG9nkbe1y8cM26kcV6brfzJ57oHiYjfRjD0" />
               <p>Vannara Thong</p>
             </div>
+            <div className="col">
+              <img height="100px" width="100px" className="rounded-circle" alt="" src="https://media-exp1.licdn.com/dms/image/C5603AQG8vPFpII9lOA/profile-displayphoto-shrink_200_200/0/1658781187291?e=1665619200&v=beta&t=xeQy7QRctH3V-Qh_08Ily3O1SAfjVcU3t-6cXFzU92Y" />
+              <p>Ronall Sunhip</p>
+            </div>
           </div>
         </div>
       </div>
