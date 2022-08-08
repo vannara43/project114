@@ -1,34 +1,36 @@
-import React, { useEffect, useState } from "react";
-import testService from "./components/services/Service"
+import React from "react";
+// import React, { useEffect, useState } from "react";
+// import testService from "./components/services/Service"
 import "./App.css";
+import Dashboard from "./components/dashboard/dashboard";
 
 function App() {
 
-  const [testTableOne, setTestTableOne] = useState([])
-  const [currentPage] = useState(0);
-  const [pageSize] = useState(5);
+  // const [testTableOne, setTestTableOne] = useState([])
+  // const [currentPage] = useState(0);
+  // const [pageSize] = useState(5);
 
 
-  const TestTableOneGetAll = () => {
-    testService.getAll(0, 5).then(TestTableOneGetAllSuccess).catch(TestTableOneGetAllError)
-  }
-  const TestTableOneGetAllSuccess = (response) => {
-    console.table(response.pagedItems);
-  }
+  // const TestTableOneGetAll = () => {
+  //   testService.getAll(0, 5).then(TestTableOneGetAllSuccess).catch(TestTableOneGetAllError)
+  // }
+  // const TestTableOneGetAllSuccess = (response) => {
+  //   console.table(response.pagedItems);
+  // }
 
-  const TestTableOneGetAllError = (err) => {
-    console.log(err);
-  }
-  useEffect(() => {
-    TestTableOneGetAll();
-  }, [])
+  // const TestTableOneGetAllError = (err) => {
+  //   console.log(err);
+  // }
+  // useEffect(() => {
+  //   TestTableOneGetAll();
+  // }, [])
+
   return (
     <React.Fragment>
       <div className="container">
-        <h1>Project E-Com</h1>
-        <hr />
+        <Dashboard />
         <h3>Tasks</h3>
-        <p>Make A Dashboard<br />
+        <p>Make A Dashboard ✅<br />
           Make a register page<br />
           Make a login<br />
           Make a user profile<br />
