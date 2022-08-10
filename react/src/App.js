@@ -50,7 +50,7 @@ function App() {
               <p>Vannara Thong</p>
             </div>
             <div className="col">
-              <img height="100px" width="100px" className="rounded-circle" alt="Ronall Sunhip " src="https://media-exp1.licdn.com/dms/image/C5603AQG8vPFpII9lOA/profile-displayphoto-shrink_200_200/0/1658781187291?e=1665619200&v=beta&t=xeQy7QRctH3V-Qh_08Ily3O1SAfjVcU3t-6cXFzU92Y" />
+              <img height="100px" width="100px" className="rounded-circle" alt="Ronall Sunhip" src="https://media-exp1.licdn.com/dms/image/C5603AQG8vPFpII9lOA/profile-displayphoto-shrink_200_200/0/1658781187291?e=1665619200&v=beta&t=xeQy7QRctH3V-Qh_08Ily3O1SAfjVcU3t-6cXFzU92Y" />
               <p>Ronall Sunhip</p>
             </div>
           </div>
