@@ -2,7 +2,7 @@ import React from "react";
 // import React, { useEffect, useState } from "react";
 // import testService from "./components/services/Service"
 import "./App.css";
-import Dashboard from "./components/dashboard/dashboard";
+import Navigation from "./components/navigation/navigationbar";
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
   return (
     <React.Fragment>
       <div className="">
-        <Dashboard />
+        <Navigation />
         <div className="">
           <img alt="default" width="100%" height="100%" src="https://i0.wp.com/nairobifashionhub.co.ke/wp-content/uploads/2020/03/Nairobi-Fashion-Hub-Top-10-Online-Shopping-Sites-In-Kenya-1.png?ssl=1"></img>
           <h3>Tasks</h3>
