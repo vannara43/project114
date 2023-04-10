@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sabio.Models.Domain
 {
+    //Testing Purposes
     public class TestTableOne
     {
         public int Id { get; set; }
@@ -20,4 +21,5 @@ namespace Sabio.Models.Domain
 
         public string ImgUrl { get; set; }
     }
+
 }
