@@ -1,30 +1,29 @@
-// import React from "react";
-import React, { useEffect, useState } from "react";
-import testService from "./components/services/Service"
+import React from "react";
+// import React, { useEffect, useState } from "react";
+// import testService from "./components/services/Service"
 import "./App.css";
 import Dashboard from "./components/dashboard/dashboard";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
 
-  const [testTableOne, setTestTableOne] = useState([])
-  const [currentPage] = useState(0);
-  const [pageSize] = useState(5);
+  // const [testTableOne, setTestTableOne] = useState([])
+  // const [currentPage] = useState(0);
+  // const [pageSize] = useState(5);
 
 
-  const TestTableOneGetAll = () => {
-    testService.getAll(0, 5).then(TestTableOneGetAllSuccess).catch(TestTableOneGetAllError)
-  }
-  const TestTableOneGetAllSuccess = (response) => {
-    console.table(response.pagedItems);
-  }
+  // const TestTableOneGetAll = () => {
+  //   testService.getAll(0, 5).then(TestTableOneGetAllSuccess).catch(TestTableOneGetAllError)
+  // }
+  // const TestTableOneGetAllSuccess = (response) => {
+  //   console.table(response.pagedItems);
+  // }
 
-  const TestTableOneGetAllError = (err) => {
-    console.log(err);
-  }
-  useEffect(() => {
-    TestTableOneGetAll();
-  }, [])
+  // const TestTableOneGetAllError = (err) => {
+  //   console.log(err);
+  // }
+  // useEffect(() => {
+  //   TestTableOneGetAll();
+  // }, [])
 
   return (
     <React.Fragment>
@@ -56,23 +55,6 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="container-lg p-3 justify-content-center text-light">
-        <Router>
-          <Routes>
-            <Route path="/p114" element={<PostCard />} />
-            <Route path="/p114/axios" element={<Axios />} />
-            <Route path="/p114/math" element={<RandomMath />} />
-            <Route path="/p114/formapp" element={<FormApp />} />
-            <Route path="/p114/todolist" element={<ToDoMain />} />
-            <Route path="/p114/todolistv2" element={<ToDoMainV2 />} />
-            <Route path="/p114/parallax" element={<Parallax />} />
-            <Route path="/p114/html" element={<Webpage />} />
-            <Route path="/p114/cardv1" element={<Cardv1 />} />
-            <Route path="/p114/menu" element={<Menu />} />
-          </Routes>
-        </Router>
       </div>
     </React.Fragment>
   );
