@@ -24,7 +24,7 @@ function TestTable() {
 
     useEffect(() => {
       TestTableOneGetAll()
-    });
+    },[]);
 
   return (
     <React.Fragment>
@@ -35,8 +35,9 @@ function TestTable() {
             <div className="row">
             {state.map((data,index)=> {
                 return (
-                    <div className="card shadow col-8 m-1" style={{"width": "18rem"}} key={index}>
-                        <div class="card-body">
+                    <div className="card shadow col-2 m-1" style={{"width": "15rem"}} key={index}>
+                        <div className="card-body">
+                        <img className="card-img-top" alt="" src={data.imgUrl}/>
                         <h5 className="card-title">{data.name}</h5>
                         <p className="card-text small">
                         {data.description}
