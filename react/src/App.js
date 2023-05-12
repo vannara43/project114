@@ -62,9 +62,13 @@ function App() {
               <img height="100px" width="100px" className="rounded-circle" alt="Vannara Thong" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdqUOfIfiQgQv2AK5LxRt2HgJysKGiyDjSg&usqp=CAU" />
               <p>Vannara Thong</p>
             </div>
-            <div className="col col-2">
+            <div className="col col-2 text-success">
               <img height="100px" width="100px" className="rounded-circle" alt="Third Developer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdqUOfIfiQgQv2AK5LxRt2HgJysKGiyDjSg&usqp=CAU" />
+<<<<<<< HEAD
               <p>Liza Ramilo</p>
+=======
+              <p>Liza Ramilo!!!</p>
+>>>>>>> fd66960bdfcb45ec1aabfe0fb1929e61df695a54
             </div>
           </div>
         </div>
