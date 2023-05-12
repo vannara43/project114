@@ -1,7 +1,7 @@
-// import React from "react";
-import React, { useEffect, useState } from "react";
+import React from "react";
+// import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import testService from "./components/services/Service";
+// import testService from "./components/services/Service";
 import Basket from "./components/landing/basket.jsx";
 import Checkout from "./components/landing/checkout.jsx";
 import Dashboard from "./components/dashboard/dashboard";
@@ -14,24 +14,24 @@ import "./App.css";
 
 function App() {
 
-  const [testTableOne, setTestTableOne] = useState([])
-  const [currentPage] = useState(0);
-  const [pageSize] = useState(5);
+  // const [testTableOne, setTestTableOne] = useState([])
+  // const [currentPage] = useState(0);
+  // const [pageSize] = useState(5);
 
 
-  const TestTableOneGetAll = () => {
-    testService.getAll(0, 5).then(TestTableOneGetAllSuccess).catch(TestTableOneGetAllError)
-  }
-  const TestTableOneGetAllSuccess = (response) => {
-    console.table(response.pagedItems);
-  }
+  // const TestTableOneGetAll = () => {
+  //   testService.getAll(0, 5).then(TestTableOneGetAllSuccess).catch(TestTableOneGetAllError)
+  // }
+  // const TestTableOneGetAllSuccess = (response) => {
+  //   console.table(response.pagedItems);
+  // }
 
-  const TestTableOneGetAllError = (err) => {
-    console.log(err);
-  }
-  useEffect(() => {
-    TestTableOneGetAll();
-  }, [])
+  // const TestTableOneGetAllError = (err) => {
+  //   console.log(err);
+  // }
+  // useEffect(() => {
+  //   TestTableOneGetAll();
+  // }, [])
 
   return (
     <React.Fragment>
