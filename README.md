@@ -8,21 +8,21 @@ SQL relational database has been established<br/>
 DotNet middle tier has been established<br/>
 React front end has been established.<br/>
 
-History:
-05/10/22 - Establish SQL Server
-05/19/22 - Started .NET Middle Tier
-06/22/22 - Created CRUD sql proc script 
-06/22/22 - Connect middle tier to sql .net 
-06/22/22 - Create api controller and create services .net 
-06/22/22 - Create database tables sql 
-06/22/22 - Establish foreign keys sql 
-06/22/22 - Implement CRUD service on .net 
-06/22/22 - Add Pagination
-06/22/22 - Connect .net API to react
-06/22/22 - Connect Stored Procs
-06/22/22 - Started React(front end)
-05/11/23 - New Developer join
-05/12/23 - Added Test Page, added card, connected backend data to front end
+History: <br/>
+05/10/22 - Establish SQL Server  <br/>
+05/19/22 - Started .NET Middle Tier <br/>
+06/22/22 - Created CRUD sql proc script  <br/>
+06/22/22 - Connect middle tier to sql .net  <br/>
+06/22/22 - Create api controller and create services .net  <br/>
+06/22/22 - Create database tables sql  <br/>
+06/22/22 - Establish foreign keys sql  <br/>
+06/22/22 - Implement CRUD service on .net  <br/>
+06/22/22 - Add Pagination <br/>
+06/22/22 - Connect .net API to react <br/>
+06/22/22 - Connect Stored Procs <br/>
+06/22/22 - Started React(front end) <br/>
+05/11/23 - New Developer join <br/>
+05/12/23 - Added Test Page, added card, connected backend data to front end <br/>
 
 Developer Team: <br/>
 Jared Williams, Vannara Thong, and Liza Ramilo
