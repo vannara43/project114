@@ -15,6 +15,18 @@ const getAll = (pageIndex, pageSize) => {
   });
 };
 
-const testService = { getAll };
+const add = (payload) => {
+  const config = {
+    method: 'POST',
+    url: `${endpoint}`,
+    data: payload,
+    crossdomain: true,
+    withCredentials: true,
+    header: { 'Content-Type': 'application/json' },
+  };
+  return axios(config).then((response)=> {
+    return {response, ...payload};
+  });
+};
 
-export default testService;
+export {getAll, add};
