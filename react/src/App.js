@@ -7,31 +7,12 @@ import Explore from "./components/landing/explore.jsx";
 import Home from "./components/landing/home.jsx";
 import Orders from "./components/landing/orders.jsx";
 import Profile from "./components/landing/profile.jsx";
-import TestTable from "./components/landing/testTable.jsx";
+import TestTable from "./components/landing/testTable/testTable.jsx";
+import TestTableForm from "./components/landing/testTable/testTableForm.jsx";
 import "./App.css";
-// import React, { useEffect, useState } from "react";
-// import testService from "./components/services/Service";
 
 
 function App() {
-
-  // const [testTableOne, setTestTableOne] = useState([])
-  // const [currentPage] = useState(0);
-  // const [pageSize] = useState(5);
-
-  // const TestTableOneGetAll = () => {
-  //   testService.getAll(0, 5).then(TestTableOneGetAllSuccess).catch(TestTableOneGetAllError)
-  // }
-  // const TestTableOneGetAllSuccess = (response) => {
-  //   console.table(response.pagedItems);
-  // }
-
-  // const TestTableOneGetAllError = (err) => {
-  //   console.log(err);
-  // }
-  // useEffect(() => {
-  //   TestTableOneGetAll();
-  // }, [])
 
   return (
     <React.Fragment>
@@ -42,16 +23,17 @@ function App() {
         {/* <div className="container-lg p-3 justify-content-center text-dark"> */}
         <Router>
           <Routes>
-            <Route path="/p114" element={<Home/>}/>
-            <Route path="/p114/explore" element={<Explore/>} />
+            <Route path="/p114" element={<Home />} />
+            <Route path="/p114/explore" element={<Explore />} />
             <Route path="/p114/basket" element={<Basket />} />
             <Route path="/p114/checkout" element={<Checkout />} />
             <Route path="/p114/orders" element={<Orders />} />
             <Route path="/p114/profile" element={<Profile />} />
             <Route path="/p114/testtable" element={<TestTable />} />
+            <Route path="/p114/testtable/form" element={<TestTableForm />} />
           </Routes>
         </Router>
-      {/* </div> */}
+        {/* </div> */}
 
         <div className="">
           <h3 className="my-3">Meet our developers</h3>
