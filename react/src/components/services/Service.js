@@ -24,9 +24,9 @@ const add = (payload) => {
     withCredentials: true,
     header: { 'Content-Type': 'application/json' },
   };
-  return axios(config).then((response)=> {
-    return {response, ...payload};
+  return axios(config).then((response) => {
+    return { response, ...payload };
   });
 };
 
-export {getAll, add};
+export { getAll, add };
