@@ -8,7 +8,7 @@ function TestTable(props) {
   const [post, setPost] = useState({
     name: "",
     sku: "",
-    price: "",
+    price: 1000,
     description: "",
     imgUrl: "",
   });

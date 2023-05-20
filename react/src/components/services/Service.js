@@ -29,4 +29,17 @@ const add = (payload) => {
   });
 };
 
-export { getAll, add };
+const update = (payload) => {
+  const config = {
+    method: 'PUT',
+    url: `${endpoint}/${payload.id}`,
+    data: payload,
+    withCredentials: true,
+    crossdomain: true,
+    headers: { 'Content-Type': 'application/json' },
+  };
+
+  return axios(config);
+};
+
+export { getAll, add, update };
