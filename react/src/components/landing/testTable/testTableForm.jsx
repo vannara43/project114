@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as testService from "../../services/Service.js";
+import * as testService from "../../services/testService.js";
 import Swal from "sweetalert2";
 
 function TestTable(props) {
@@ -17,9 +17,9 @@ function TestTable(props) {
     setPost({ ...post, [event.target.name]: event.target.value });
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    testService.add(post).then(addTestTableSuccess).catch(addTestTableError);
     console.log("Submitted", e);
+    // e.preventDefault();
+    testService.add(post).then(addTestTableSuccess).catch(addTestTableError);
   };
 
   const addTestTableSuccess = () => {
@@ -99,12 +99,12 @@ function TestTable(props) {
               placeholder="Image Url"
               onChange={(e) => handleChange(e)}
             />
-          </form>
           <div className="text-center my-2">
-            <button className="btn btn-warning" onSubmit={handleSubmit}>
+            <a href="/p114/testtable/" className="btn btn-warning" onClick={handleSubmit}>
               Add Posts
-            </button>
+            </a>
           </div>
+          </form>
         </div>
       </div>
     </React.Fragment>
