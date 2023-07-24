@@ -100,9 +100,9 @@ function TestTable(props) {
               onChange={(e) => handleChange(e)}
             />
           <div className="text-center my-2">
-            <a href="/p114/testtable/" className="btn btn-warning" onClick={handleSubmit}>
+            <button className="btn btn-warning" type="submit">
               Add Posts
-            </a>
+            </button>
           </div>
           </form>
         </div>
