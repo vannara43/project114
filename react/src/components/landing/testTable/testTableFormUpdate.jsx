@@ -1,31 +1,46 @@
 import React, { useEffect, useState } from "react";
-import * as testService from "../../services/Service.js";
+import { useLocation } from "react-router-dom";
+import * as testService from "../../services/testService.js";
 import Swal from "sweetalert2";
 
 function TestTable(props) {
   /* ADD AXIOS BEGIN */
-
-  const [post, setPost] = useState({
+  
+  const location = useLocation();
+  const newId = location.pathname.slice(28,30);
+  const [updateForm, setUpdateForm] = useState({
+    id: newId,
     name: "",
     sku: "",
-    price: 1000,
+    price: "",
     description: "",
     imgUrl: "",
   });
 
+
+  useEffect(() => {
+  }, [])
+
+  const getIdHandle =()=> {
+    console.log(updateForm);
+  }
+  
+  // This functionm will update the useState from form data
   const handleChange = (event) => {
-    setPost({ ...post, [event.target.name]: event.target.value });
+    setUpdateForm({ ...updateForm, [event.target.name]: event.target.value });
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    testService.add(post).then(addTestTableSuccess).catch(addTestTableError);
-    console.log("Submitted", e);
+  
+  // This function will send a PUT request to api from testServices
+  const onUpdateRequested = (formData) => {
+    formData.preventDefault();
+    testService.updateTest(updateForm).then(addTestTableSuccess).catch(addTestTableError);
+    console.log("Submitted", formData);
   };
 
   const addTestTableSuccess = () => {
     Swal.fire({
-      title: "You have successfully added a new post!",
-      text: "You will now see post from project114-ecommerce",
+      title: "You have successfully updated a new post!",
+      text: "You will now see update from project114-ecommerce",
       icon: "success",
       confirmButtonText: "Okay",
     });
@@ -34,24 +49,28 @@ function TestTable(props) {
   const addTestTableError = () => {
     Swal.fire({
       title: "Attempt Fail!",
-      text: "You will not see post",
+      text: "You will not see update",
       icon: "fail",
       confirmButtonText: "Okay",
     });
   };
 
-  useEffect(() => {}, []);
 
   return (
     <React.Fragment>
       
-      <div className="container d-flex justify-content-center my-2 "><a className="btn btn-danger" href="/p114/testTable">
+      <div className="container d-flex justify-content-center my-2 ">
+        <a className="btn btn-danger" href="/p114/testTable">
       ← Go Back
-      </a></div>
+      </a>
+      <button onClick={getIdHandle}>Get Log</button>
+      </div>
       <div className="container d-flex justify-content-center row ">
         <div className="col-6 shadow border row">
-        <h1 className="text-center">Add a post</h1>
-          <form onSubmit={handleSubmit} className="form-group m-3">
+        <h1 className="text-center">Update this post</h1>
+          <form onSubmit={onUpdateRequested} className="form-group m-3">
+            <label for="id">Identification #</label>
+            <input type="text" name="id" className="form-control" value={newId} disabled/>
             <label htmlFor="name" id="name">
               Name
             </label>
@@ -63,7 +82,7 @@ function TestTable(props) {
               placeholder="Enter Name"
               onChange={(e) => handleChange(e)}
             />
-            <label for="inputName">SKU#</label>
+            <label for="sku">SKU#</label>
             <input
               name="sku"
               type="number"
@@ -72,7 +91,7 @@ function TestTable(props) {
               placeholder="SKU #"
               onChange={(e) => handleChange(e)}
             />
-            <label for="inputName">Price</label>
+            <label for="price">Price</label>
             <input
               name="price"
               type="number"
@@ -81,7 +100,7 @@ function TestTable(props) {
               placeholder="Price"
               onChange={(e) => handleChange(e)}
             />
-            <label for="inputName">Description</label>
+            <label for="description">Description</label>
             <input
               name="description"
               type="text"
@@ -90,7 +109,7 @@ function TestTable(props) {
               placeholder="Description"
               onChange={(e) => handleChange(e)}
             />
-            <label for="inputName">Image Url</label>
+            <label for="imgUrl">Image Url</label>
             <input
               name="imgUrl"
               type="text"
@@ -99,12 +118,12 @@ function TestTable(props) {
               placeholder="Image Url"
               onChange={(e) => handleChange(e)}
             />
-          </form>
           <div className="text-center my-2">
-            <button className="btn btn-warning" onSubmit={handleSubmit}>
-              Add Posts
+            <button type="submit" className="btn btn-success">
+              Update Post
             </button>
           </div>
+          </form>
         </div>
       </div>
     </React.Fragment>

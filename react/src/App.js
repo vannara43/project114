@@ -9,6 +9,7 @@ import Orders from "./components/landing/orders.jsx";
 import Profile from "./components/landing/profile.jsx";
 import TestTable from "./components/landing/testTable/testTable.jsx";
 import TestTableForm from "./components/landing/testTable/testTableForm.jsx";
+import TestTableFormUpdate from "./components/landing/testTable/testTableFormUpdate.jsx";
 import "./App.css";
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/p114/profile" element={<Profile />} />
             <Route path="/p114/testtable" element={<TestTable />} />
             <Route path="/p114/testtable/form" element={<TestTableForm />} />
+            <Route path="/p114/testtable/form/update/*" element={<TestTableFormUpdate />} />
           </Routes>
         </Router>
         {/* </div> */}
