@@ -23,6 +23,7 @@ History: <br/>
 06/22/22 - Started React(front end) <br/>
 05/11/23 - New Developer join <br/>
 05/12/23 - Added Test Page, added card, connected backend data to front end <br/>
+07/23/23 - CRUD is now fullu functional on test page
 
 Developer Team: <br/>
 Jared Williams, Vannara Thong, and Liza Ramilo
