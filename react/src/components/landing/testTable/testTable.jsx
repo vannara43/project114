@@ -8,7 +8,7 @@ function TestTable() {
   // GETALL request service
   const TestTableOneGetAll = () => {
     testService
-      .getAll(0, 30)
+      .getAllTest(0, 30)
       .then(TestTableOneGetAllSuccess)
       .catch(TestTableOneGetAllError);
   };
@@ -34,7 +34,7 @@ function TestTable() {
   const delPost = (e) => {
     console.log(e.target.value);
     const data =  e.target.value;
-    testService.remove(data).then(onDeleteSuccess).catch(onDeleteError);
+    testService.deleteTest(data).then(onDeleteSuccess).catch(onDeleteError);
 };
 
 const onDeleteSuccess = (response) => {

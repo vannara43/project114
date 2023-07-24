@@ -33,7 +33,7 @@ function TestTable(props) {
   // This function will send a PUT request to api from testServices
   const onUpdateRequested = (formData) => {
     formData.preventDefault();
-    testService.update(updateForm).then(addTestTableSuccess).catch(addTestTableError);
+    testService.updateTest(updateForm).then(addTestTableSuccess).catch(addTestTableError);
     console.log("Submitted", formData);
   };
 

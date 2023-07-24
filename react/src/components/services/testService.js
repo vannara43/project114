@@ -2,7 +2,7 @@ import axios from "axios";
 
 const endpoint = "https://localhost:50001/api/testtableone";
 
-const getAll = (pageIndex, pageSize) => {
+const getAllTest = (pageIndex, pageSize) => {
   const config = {
     method: "GET",
     url: `${endpoint}/paginate?pageIndex=${pageIndex}&pageSize=${pageSize}`,
@@ -15,7 +15,7 @@ const getAll = (pageIndex, pageSize) => {
   });
 };
 
-const add = (payload) => {
+const addTest = (payload) => {
   const config = {
     method: 'POST',
     url: `${endpoint}`,
@@ -29,7 +29,7 @@ const add = (payload) => {
   });
 };
 
-const update = (payload) => {
+const updateTest = (payload) => {
   const config = {
     method: 'PUT',
     url: `${endpoint}/${payload.id}`,
@@ -42,7 +42,7 @@ const update = (payload) => {
   return axios(config);
 };
 
-const remove = (id) => {
+const deleteTest = (id) => {
   const config = {
     method: 'DELETE',
     url: `${endpoint}/` + id,
@@ -54,4 +54,4 @@ const remove = (id) => {
   return axios(config);
 };
 
-export { getAll, add, update, remove };
+export { getAllTest, addTest, updateTest, deleteTest };

@@ -19,7 +19,7 @@ function TestTable(props) {
   const handleSubmit = (e) => {
     console.log("Submitted", e);
     // e.preventDefault();
-    testService.add(post).then(addTestTableSuccess).catch(addTestTableError);
+    testService.addTest(post).then(addTestTableSuccess).catch(addTestTableError);
   };
 
   const addTestTableSuccess = () => {
