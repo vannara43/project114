@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from "react";
-import * as testService from "../services/testService.js";
+import * as productService from "../services/productService.js";
 
 function Explore() {
   // Insert JS Code here
   const [state, setState] = useState([{}]);
   
   // GETALL request service
-  const TestTableOneGetAll = () => {
-    testService
-      .getAllTest(0, 30)
-      .then(TestTableOneGetAllSuccess)
-      .catch(TestTableOneGetAllError);
+  const productGetAll = () => {
+    productService
+      .getAllProduct(0, 30)
+      .then(productGetAllSuccess)
+      .catch(productGetAllError);
   };
-  const TestTableOneGetAllSuccess = (response) => {
+  const productGetAllSuccess = (response) => {
     let arrayOfPeeps = response;
     setState(arrayOfPeeps.pagedItems);
     console.log("success", state);
   };
 
-  const TestTableOneGetAllError = (err) => {
+  const productGetAllError = (err) => {
     console.log(err);
   };
 
 // useEffect starts on page load up
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => TestTableOneGetAll(),[]);
+  useEffect(() => productGetAll(),[]);
 
   const messageAlert = (e) => {
     console.log("messageAlert", e.target.value)
@@ -39,7 +39,7 @@ function Explore() {
 
 // const onDeleteSuccess = (response) => {
 //   alert('Delete Success!', response);
-//   TestTableOneGetAll();
+//   productGetAll();
 // };
 
 // const onDeleteError = (err) => {
@@ -52,7 +52,7 @@ function Explore() {
     <div className="container-lg">
     <h2>Explore Page</h2>
         {/* Get post from API server */}
-        <button className="btn btn-primary" onClick={TestTableOneGetAll}>
+        <button className="btn btn-primary" onClick={productGetAll}>
           Get Posts
         </button>
         {/* Add post from API server */}
@@ -66,16 +66,16 @@ function Explore() {
             return (
               <div
                 className="card shadow col-2 m-1"
-                style={{ width: "18rem", "height":"23rem"}}
+                style={{ width: "18rem", "height":"auto"}}
                 key={index}
               >
                 <div className="card-body">
-                  <img className="card-img-top" alt="" src={data.imgUrl} style={{"height":"10rem"}}/>
-                  <h5 className="card-title">{data.id}. {data.name}</h5>
-                  <p className="" style={{ height: "5rem" }}>
+                  <img className="card-img-top" alt="" src={data.imgUrl} style={{"height":"16rem"}}/>
+                  <h5 className="card-title mt-2" style={{ "height": "3rem"}}>{data.id}. {data.name}</h5>
+                  <p className="" style={{ "height": "5rem", "fontSize":"14px" }}>
                     {data.description}
                   </p>
-                  <div className="text-end">
+                  <div className="text-end" style={{ "height": "2rem"}}>
                     {/* <a href={`/p114/testtable/form/update/${data.id}`} className="btn btn-success" > Edit </a> */}
                     <button type="button" onClick={messageAlert} value={data.id} className="btn btn-warning">Add to cart</button>
                     {/* <button type="button" className="btn btn-danger" onClick={delPost} value={data.id}>Delete</button> */}
