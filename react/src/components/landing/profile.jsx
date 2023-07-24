@@ -7,10 +7,10 @@ function Profile() {
   return (
     //insert HTML Code below
     <React.Fragment>
-    <div>
+    <div className="">
       <h2>Profile Page</h2>
-      <div className="col col-9 shadow rounded p-1 m-2 border row">
-        <div className="col col-8">
+      <div className="col col-9 shadow rounded p-1 m-2 border row ">
+        <div className="col col-8 ">
         <h4>Personal Info</h4>
         <p>Name: George Noecho</p>
         <p>Email: georgenoecho@gmail.com</p>
@@ -59,15 +59,7 @@ function Profile() {
       <input type="text" className="form-control" id="inputZip"/>
     </div>
   </div>
-  <div className="form-group">
-    <div className="form-check">
-      <input className="form-check-input" type="checkbox" id="gridCheck"/>
-      <label className="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" className="btn btn-primary">Sign in</button>
+  <button type="submit" className="btn btn-primary mt-2">Update</button>
 </form>
     </div>
     </React.Fragment>
