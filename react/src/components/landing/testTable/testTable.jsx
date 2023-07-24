@@ -4,7 +4,6 @@ import * as testService from "../../services/testService.js";
 function TestTable() {
   const [state, setState] = useState([{}]);
   
-  
   // GETALL request service
   const TestTableOneGetAll = () => {
     testService

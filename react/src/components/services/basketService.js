@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const endpoint = "https://localhost:50001/api/testtableone";
+const endpoint = "https://localhost:50001/api/baskets";
 
 // getAll Request to API server
 const getAllBasket = (pageIndex, pageSize) => {
