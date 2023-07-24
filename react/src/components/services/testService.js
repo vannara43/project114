@@ -2,6 +2,7 @@ import axios from "axios";
 
 const endpoint = "https://localhost:50001/api/testtableone";
 
+// getAll Request to API server
 const getAllTest = (pageIndex, pageSize) => {
   const config = {
     method: "GET",
@@ -15,6 +16,7 @@ const getAllTest = (pageIndex, pageSize) => {
   });
 };
 
+// Add Request to API server
 const addTest = (payload) => {
   const config = {
     method: 'POST',
@@ -29,6 +31,7 @@ const addTest = (payload) => {
   });
 };
 
+// Update Request to API server
 const updateTest = (payload) => {
   const config = {
     method: 'PUT',
@@ -42,6 +45,7 @@ const updateTest = (payload) => {
   return axios(config);
 };
 
+// delete Request to API server
 const deleteTest = (id) => {
   const config = {
     method: 'DELETE',
