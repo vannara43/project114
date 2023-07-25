@@ -4,7 +4,9 @@ About this site: <br/>
 Project-114/Project E-Com, is focuses on e-commerce and artificial intelligence. It is referred to as "One of the world most greatest online retailer that is focused on making customers happy."<br/>
 
 History: <br/>
-![image](https://github.com/vannara43/project114/assets/36809428/cf569f1b-2cb7-48be-afdc-155dd28947a6)
+![image](https://github.com/vannara43/project114/assets/36809428/215f7ac2-07dd-40cf-aafc-bdf48d99bf0e)
+
+
 
 <hr/>
 Developer Team: <br/>
