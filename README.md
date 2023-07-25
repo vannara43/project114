@@ -3,28 +3,10 @@
 About this site: <br/>
 Project-114/Project E-Com, is focuses on e-commerce and artificial intelligence. It is referred to as "One of the world most greatest online retailer that is focused on making customers happy."<br/>
 
-Stages: <br/>
-SQL relational database has been established<br/>
-DotNet middle tier has been established<br/>
-React front end has been established.<br/>
-
 History: <br/>
-05/10/22 - Establish SQL Server  <br/>
-05/19/22 - Started .NET Middle Tier <br/>
-06/22/22 - Created CRUD sql proc script  <br/>
-06/22/22 - Connect middle tier to sql .net  <br/>
-06/22/22 - Create api controller and create services .net  <br/>
-06/22/22 - Create database tables sql  <br/>
-06/22/22 - Establish foreign keys sql  <br/>
-06/22/22 - Implement CRUD service on .net  <br/>
-06/22/22 - Add Pagination <br/>
-06/22/22 - Connect .net API to react <br/>
-06/22/22 - Connect Stored Procs <br/>
-06/22/22 - Started React(front end) <br/>
-05/11/23 - New Developer join <br/>
-05/12/23 - Added Test Page, added card, connected backend data to front end <br/>
-07/23/23 - CRUD is now fullu functional on test page
+![image](https://github.com/vannara43/project114/assets/36809428/cf569f1b-2cb7-48be-afdc-155dd28947a6)
 
+<hr/>
 Developer Team: <br/>
 Jared Williams, Vannara Thong, and Liza Ramilo
 
