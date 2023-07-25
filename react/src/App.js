@@ -7,6 +7,8 @@ import Explore from "./components/landing/explore.jsx";
 import Home from "./components/landing/home.jsx";
 import Orders from "./components/landing/orders.jsx";
 import Profile from "./components/landing/profile.jsx";
+import Register from "./components/landing/register.jsx";
+import Login from "./components/landing/login.jsx";
 import TestTable from "./components/landing/testTable/testTable.jsx";
 import TestTableForm from "./components/landing/testTable/testTableForm.jsx";
 import TestTableFormUpdate from "./components/landing/testTable/testTableFormUpdate.jsx";
@@ -30,6 +32,8 @@ function App() {
             <Route path="/p114/checkout" element={<Checkout />} />
             <Route path="/p114/orders" element={<Orders />} />
             <Route path="/p114/profile" element={<Profile />} />
+            <Route path="/p114/register" element={<Register />} />
+            <Route path="/p114/login" element={<Login />} />
             <Route path="/p114/testtable" element={<TestTable />} />
             <Route path="/p114/testtable/form" element={<TestTableForm />} />
             <Route path="/p114/testtable/form/update/*" element={<TestTableFormUpdate />} />
