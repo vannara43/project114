@@ -46,7 +46,7 @@ function App() {
             </div>
             <div className="col col-2">
               <img height="100px" width="100px" className="rounded-circle" alt="Vannara Thong" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdqUOfIfiQgQv2AK5LxRt2HgJysKGiyDjSg&usqp=CAU" />
-              <p>Vannara Thong!</p>
+              <p>Vannara Thong</p>
             </div>
             <div className="col col-2">
               <img height="100px" width="100px" className="rounded-circle" alt="Third Developer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdqUOfIfiQgQv2AK5LxRt2HgJysKGiyDjSg&usqp=CAU" />
